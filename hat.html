@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Chúc mừng sinh nhật Linh nhé !!</title>
+	<meta charset="utf-8">
+    <meta name="language" content="en-us"/>  
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   
+    
+	<style type="text/css">
+        
+        *{
+            background: #fff;
+        }
+        
+        #loveHeart{
+            background: transparent;
+            background: url('assets/img/guitarboy.gif') no-repeat center;
+        }
+		#copyright{
+			font-family: 'Montserrat',sans-serif;
+			opacity: 0.8;
+		}
+		#copyright a{
+			text-decoration: none;
+		}
+		#copyright a:hover{
+			text-decoration: none;
+			color:#339933;
+		}
+       	</style>
+		   
+   	<link href="assets/css/style1.css" type="text/css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+   	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/js/birthday.js"></script>
+    <script type="text/javascript" src="assets/js/hbd.js"></script>
+</head>
+
+<body>
+	<iframe style="display: none;" width="1180" height="664" src="https://www.youtube.com/embed/Qrr1D5hmRF0?rel=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code" >
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* Hôm nay là ngày sinh nhật em.</span><br />
+				<span class="space"/><span class="comments">* Ngoài những món quà trên, anh xin hát tặng em cho chất.</span><br />
+				<span class="space"/><span class="comments">* Biết là không hay nhưng cố nghe em nhé hehee.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Ngoài trời thì nắng / Trong em thì mưa <br />
+				Gọi điện cho em nhưng không thể ngừng nhớ <br />
+				Ngoài trời thì nóng / Trong tim lạnh căm<br />
+				Vì anh yêu em nhưng không được gặp em <br />
+				Cùng em băng băng trên con phố quen đông người qua <br />
+				Là anh cũng đã thấy thích thích lắm rồi <br />
+				Nhìn người ta đưa nhau đi trà đá cafe<br />
+				Mà lòng anh cũng mong mong được cùng em <br />
+				Em à em ơi... <br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden" style="display:none"></canvas>
+			</div>
+		</div>
+		<div id="copyright">
+			<hr>
+			<p>Made with love by <a href="hihi.html">Tao Xuan Dang</a> </p>
+			
+		</hr>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(1998,7, 10);
+		together.setHours(8);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Sorry, browser doesn't support this!"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
